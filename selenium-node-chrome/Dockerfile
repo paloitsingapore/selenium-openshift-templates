@@ -7,7 +7,7 @@ USER root
 COPY ./contrib /usr/local/bin
 
 RUN chown -R 1001:0 /opt/selenium && \
-    chmod -x /usr/local/bin/fix-permissions && \
+    chmod +x /usr/local/bin/fix-permissions && \
   /usr/local/bin/fix-permissions /opt/selenium && \
   /usr/local/bin/fix-permissions $HOME
 
