@@ -1,4 +1,4 @@
-FROM selenium/node-chrome:3.6.0
+FROM selenium/node-chrome:3.141.59-neon
 
 ENV HOME=/home/seluser
 
@@ -6,10 +6,7 @@ USER root
 
 COPY ./contrib /usr/local/bin
 
-RUN chown -R 1001:0 /opt/selenium && \
-    chmod +x /usr/local/bin/fix-permissions && \
-  /usr/local/bin/fix-permissions /opt/selenium && \
-  /usr/local/bin/fix-permissions $HOME
+RUN chown -R 1001:0 /opt/selenium
 
 USER 1001
 WORKDIR $HOME
